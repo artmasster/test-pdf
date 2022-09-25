@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
 const { degrees, PDFDocument, rgb } = require('pdf-lib');
+const { _base64ToArrayBuffer } = require('./util');
 
 module.exports = async function customPDF() {
   // LOAD IMG
@@ -44,13 +45,3 @@ module.exports = async function customPDF() {
   const pdfBase64 = await pdfDoc.saveAsBase64({ dataUri: true });
   return pdfBase64;
 };
-
-function _base64ToArrayBuffer(base64) {
-  var binary_string = atob(base64.split(',')[1]);
-  var len = binary_string.length;
-  var bytes = new Uint8Array(len);
-  for (var i = 0; i < len; i++) {
-    bytes[i] = binary_string.charCodeAt(i);
-  }
-  return bytes.buffer;
-}
