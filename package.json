@@ -1,23 +1,12 @@
 {
   "name": "test-pdf",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "./src/app.js",
   "type": "module",
   "scripts": {
     "start": "node ./src/app.js",
-    "dev": "nodemon ./src/app.js"
+    "dev": "nodemon ./src/app.js",
+    "deploy": "gcloud run deploy test-pdf --project=mcddfb --source . --region=asia-southeast1 --port=3000 --allow-unauthenticated"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/artmasster/test-pdf.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/artmasster/test-pdf/issues"
-  },
-  "homepage": "https://github.com/artmasster/test-pdf#readme",
   "dependencies": {
     "express": "^4.18.1",
     "node-fetch": "^3.2.10",
