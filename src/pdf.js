@@ -1,10 +1,5 @@
 import fetch from 'node-fetch';
-import {
-  degrees,
-  PDFDocument,
-  rgb,
-  // StandardFonts,
-} from 'pdf-lib';
+import { degrees, PDFDocument, rgb } from 'pdf-lib';
 
 export async function customPDF() {
   // LOAD IMG
